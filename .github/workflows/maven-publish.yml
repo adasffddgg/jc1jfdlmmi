@@ -32,10 +32,10 @@ jobs:
       with:
         gpg_private_key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
         passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
-    - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy
-      env:
-        GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }} # GITHUB_TOKEN is the default env for the password
+    # - name: Publish to GitHub Packages Apache Maven
+      # run: mvn deploy
+      # env:
+        # GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }} # GITHUB_TOKEN is the default env for the password
 
     - name: Set up Apache Maven Central
       uses: actions/setup-java@v3
