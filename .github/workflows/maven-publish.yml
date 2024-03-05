@@ -60,3 +60,7 @@ jobs:
         MAVEN_USERNAME: a5nFdU9u
         MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
         MAVEN_GPG_PASSPHRASE: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+    - name: Configure Git User
+      run: |
+        ls -a
+        cat settings.xml
