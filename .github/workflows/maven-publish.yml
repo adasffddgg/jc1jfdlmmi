@@ -23,10 +23,6 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
     - name: Configure Git User
       run: |
         git config user.email "adasffddgg@gmail.com"
@@ -37,6 +33,10 @@ jobs:
       with:
         gpg_private_key: ${{ secrets.MAVEN_GPG_PRIVATE_KEY }}
         passphrase: ${{ secrets.MAVEN_GPG_PASSPHRASE }}
+    - name: Publish to GitHub Packages Apache Maven
+      run: mvn deploy
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
     - name: Set up Apache Maven Central
       uses: actions/setup-java@v3
       with: # running setup-java again overwrites the settings.xml
