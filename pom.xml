@@ -44,6 +44,11 @@
     </repositories>
 
     <distributionManagement>
+         <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/adasffddgg/jc1jfdlmmi</url>
+        </repository>
         <snapshotRepository>
             <id>ossrh-adas</id>
             <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
